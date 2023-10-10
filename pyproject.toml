@@ -1,0 +1,19 @@
+[tool.poetry]
+name = "openmm-heat-plugin"
+version = "0.0.0.dev1"
+description = ""
+authors = ["Yudai Okubo <yudaiokubo@gmail.com>"]
+licencse = "MIT"
+include = ["src/*"]
+
+[tool.poetry.dependencies]
+python = "^3.10"
+
+[tool.poetry.dev-dependencies]
+
+[build-system]
+requires = [
+
+]
+
+[tool.poetry.extras]
