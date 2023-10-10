@@ -6,14 +6,14 @@
 1. Python ライブラリ使用者向けC++ラッパー
 1. pybind11 C++/Python バインディングライブラリ
 
-## Setup your development environment
+## Set up your development environment
 
 1. Python 3.10 or higher
 1. gcc (Ubuntu 9.4.0-1ubuntu1~20.04.2) 9.4.0
 1. OpenMM (Python ライブラリ)
 1. pybind11 v2.10
 
-### Using pyenv
+### Set up your virtual environment
 Excecute these commands below to establish your dev environment.
 ```bash
 pyenv update
@@ -33,7 +33,15 @@ Verify openmm installation
 ```bash
 python -m openmm.testInstallation
 ```
-## Goal Image
+
+### Install packages for C++/python bindings
+```
+pip install pybind11 nanobind
+```
+
+
+
+## Project Goal
 
 We aim users can compute the heat flux inside proteins in parallel with MD computing driven by OpenMM.
 

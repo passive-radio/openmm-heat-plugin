@@ -166,3 +166,9 @@ _skbuild
 *.egg-info
 *.so
 .python-version
+input
+input/
+out
+out/
+log
+log/
