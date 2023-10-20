@@ -70,6 +70,13 @@ Configure includepath for your conda environment (Example below)
 
 Replace ${env:CONDA_PREFIX} with absolute path (e.x. /home/{user}/miniconda3/envs/{env_name}) if IntelliSense can't properly detect header files.
 
+## Build C++ libraries for Python
+Please make sure your cmake version is 3.16.x.
+```bash
+cmake -S . -B build -DPython_EXECUTABLE=$(which python)
+cmake --build build
+```
+
 ## Project Goal
 
 We aim users can compute the heat flux inside proteins in parallel with MD computing driven by OpenMM.
