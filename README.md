@@ -7,11 +7,13 @@
 1. pybind11 C++/Python バインディングライブラリ
 
 ## Set up your development environment
-
-1. Python 3.10 or higher
+### Dependencies
+1. Python 3.10 ~ 3.11.x
 1. gcc (Ubuntu 9.4.0-1ubuntu1~20.04.2) 9.4.0
-1. OpenMM (Python ライブラリ)
-1. pybind11 v2.10
+1. cmake version 3.16.x
+1. OpenMM (Python ライブラリ) 8.x
+1. pybind11 2.11.x
+1. nanobind 1.6.x
 
 ### Set up your virtual environment
 Excecute these commands below to establish your dev environment.
@@ -39,7 +41,33 @@ python -m openmm.testInstallation
 pip install pybind11 nanobind
 ```
 
+### Configure IntelliSense for VSCode
+By default, IntelliSense can't detect pybind11, nanobind header files. To avoid this issue, configure c_cpp_properties.json.
+![img](doc/asset/cpp_properties_edit.jpg) Select C/C++: Edit Configurations (UI) or (JSON) by opening VSCode command pallete.
 
+Configure includepath for your conda environment (Example below)
+```json
+{
+    "configurations": [
+        {
+            "name": "Linux",
+            "includePath": [
+                "${workspaceFolder}/**",
+                "${env:CONDA_PREFIX}/include/python3.11/**",
+                "${env:CONDA_PREFIX}/include/**",
+                "${env:CONDA_PREFIX}/lib/python3.11/site-packages/nanobind/include/**"
+            ],
+            "defines": [],
+            "compilerPath": "/bin/gcc",
+            "cStandard": "c17",
+            "intelliSenseMode": "linux-gcc-x64"
+        }
+    ],
+    "version": 4
+}
+```
+
+Replace ${env:CONDA_PREFIX} with absolute path (e.x. /home/{user}/miniconda3/envs/{env_name}) if IntelliSense can't properly detect header files.
 
 ## Project Goal
 
