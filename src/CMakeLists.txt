@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 3.15...3.27)
-project(nonbonded_atom LANGUAGES CXX VERSION 0.0.0)
+project(openmm_heat_plugin LANGUAGES CXX VERSION 0.0.0)
 
 find_package(Python COMPONENTS Interpreter Development REQUIRED)
 
@@ -16,8 +16,8 @@ list(APPEND CMAKE_PREFIX_PATH "${NB_DIR}")
 find_package(nanobind CONFIG REQUIRED)
 
 nanobind_add_module(
-    nonbonded_atom
+  openmm_heat_plugin
     NB_STATIC
-    nonbonded_atom.cpp
-    nonbonded_atom_binding.cpp
+    pairs.cpp
+    binding.cpp
 )
