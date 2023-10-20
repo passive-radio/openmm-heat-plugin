@@ -26,7 +26,7 @@ which conda && conda --version # --> {workspace_dir}/.pyenv/shims/conda
 # --> conda 23.5.2
 conda create -n openmm-heat-plugin-dev
 conda activate openmm-heat-plugin-dev
-conda install pip # This package is not provided via anaconda or conda-forge.
+conda install pip # pybind11, nanobind packages are not provided via anaconda or conda-forge.
 which pip # --> ~/miniconda3/envs/openmm-heat-plugin-dev/bin/pip
 conda install -c conda-forge gcc=13.2.0 openmm=8.0.0 # For further information, See http://docs.openmm.org/latest/userguide/application/01_getting_started.html#installing-openmm
 ```
@@ -43,7 +43,8 @@ pip install pybind11 nanobind
 
 ### Configure IntelliSense for VSCode
 By default, IntelliSense can't detect pybind11, nanobind header files. To avoid this issue, configure c_cpp_properties.json.
-![img](doc/asset/cpp_properties_edit.jpg) Select C/C++: Edit Configurations (UI) or (JSON) by opening VSCode command pallete.
+![Select C/C++: Edit Configurations (UI) or (JSON) by opening VSCode command pallete.](doc/asset/cpp_properties_edit.jpg)
+Select C/C++: Edit Configurations (UI) or (JSON) by opening VSCode command pallete.
 
 Configure includepath for your conda environment (Example below)
 ```json
